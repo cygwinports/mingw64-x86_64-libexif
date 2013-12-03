@@ -1,0 +1,20 @@
+CROSS_HOST="x86_64-w64-mingw32"
+inherit cross
+
+NAME="mingw64-x86_64-libexif"
+VERSION=0.6.21
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="EXIF parser library for Win64 toolchain"
+DESCRIPTION="libexif is a library for parsing, editing, and saving EXIF data.
+In addition, it has gettext support. All EXIF tags described in EXIF standard
+2.1 are supported."
+HOMEPAGE="http://libexif.sourceforge.net/"
+SRC_URI="mirror://sourceforge/libexif/libexif-${VERSION}.tar.bz2"
+SRC_DIR="libexif-${VERSION}"
+PATCH_URI="mirror://portage/media-libs/libexif/files/libexif-0.6.13-pkgconfig.patch"
+
+CYGCONF_ARGS="--disable-docs"
+MAKEOPTS+=" doc_DATA= "
+
+KEEP_LA_FILES="none"
